@@ -13,7 +13,7 @@ class HomeController extends Controller
     {
         /*CARA 2 */
         $data = [
-	      'username'        => 'LARAVEL 2TIA',
+	      'username'        => 'LARAVEL2TIA',
 	      'last_login'      => date('Y-m-d H:i:s'),
 	      'list_pendidikan' => ['SD', 'SMP', 'SMA', 'S1', 'S2', 'S3']
 	  ];
