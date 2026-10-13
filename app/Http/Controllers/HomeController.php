@@ -32,13 +32,15 @@ class HomeController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-    {
-        //
-    }
+{
+    // Validasi input
+    $validated = $request->validate([
+        'nama' => 'required',
+        'email' => 'required|email',
+        'pertanyaan' => 'required',
+    ]);
 
-    /**
-     * Display the specified resource.
-     */
+}
     public function show(string $id)
     {
         //

@@ -27,12 +27,23 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
-        $data['nama']        =$request->nama;
-        $data['email']       =$request->email;
-        $data['pertanyaan']  =$request->pertanyaan;
+        // Validasi input
+        $validated = $request->validate([
+            'nama'       => 'required',
+            'email'      => 'required|email',
+            'pertanyaan' => 'required',
+        ]);
 
-return view('home-question-respon', $data);
+        // Ambil data dari request
+        $nama       = $request->nama;
+        $email      = $request->email;
+        $pertanyaan = $request->pertanyaan;
+
+        // Buat format pesan flash
+        $pesan = "Terimakasih <strong>{$nama}</strong>! Pertanyaan ini: <strong>{$pertanyaan}</strong> akan segera direspon melalui email <strong>{$email}</strong>";
+
+        // Redirect kembali ke halaman form dengan flash data 'info'
+        return redirect()->back()->with('info', $pesan);
     }
 
     /**
