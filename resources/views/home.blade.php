@@ -82,13 +82,13 @@
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <h1 class="display-6 mb-2"{{ $username }}h1>
-            <p class="lead mb-0">{{ $last_login }}</p>
+            <h1>{{$nama}}</h1>
+            <p class="lead mb-0">A simple and elegant app using Bootstrap 5 and Laravel Blade.</p>
         </div>
     </section>
 
     <!-- Content Section -->
-    <section id="content" class="container ">
+    <section id="content" class="container">
         <div class="row">
             <div class="col-md-6">
                 {{-- About --}}
@@ -150,11 +150,70 @@
                         </p>
                     </div>
                 </div>
+
+                {{-- Demonstration: Loop For & Loop While --}}
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="h5 mb-3">Perulangan (For & While)</h3>
+                        
+                        <h6>1. Perulangan For</h6>
+                        @for ($i = 0; $i < 10; $i++)
+                            <p class="mb-1">The current value is {{ $i }}</p>
+                        @endfor
+
+                        <hr>
+
+                        <h6>2. Perulangan While</h6>
+                        @php
+                            $i = 5;
+                        @endphp
+
+                        @while ($i != 0)
+                            <p class="mb-1">The current value of i is {{ $i }}</p>
+                            @php
+                                $i--;
+                            @endphp
+                        @endwhile
+                    </div>
+                </div>
+
+                {{-- Demonstration: Condition (If-Else) & Switch Case --}}
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="h5 mb-3">Kondisi (If-Else & Switch)</h3>
+                        
+                        <h6>1. Kondisi If-Else</h6>
+                        @if (isset($records) && count($records) === 1)
+                            <p>I have one record!</p>
+                        @elseif (isset($records) && count($records) > 1)
+                            <p>I have multiple records!</p>
+                        @else
+                            <p>I don't have any records!</p>
+                        @endif
+
+                        <hr>
+
+                        <h6>2. Switch Case</h6>
+                        @php $switchVal = 1; @endphp
+                        @switch($switchVal)
+                            @case(1)
+                                <p>First case...</p>
+                                @break
+
+                            @case(2)
+                                <p>Second case...</p>
+                                @break
+
+                            @default
+                                <p>Default case...</p>
+                        @endswitch
+                    </div>
+                </div>
             </div>
 
             <div class="col-md-6">
                 {{-- Alerts --}}
-                <div class="card ">
+                <div class="card">
                     <div class="card-body">
                         <h3 class="h5 mb-3">Alerts</h3>
                         <div class="alert alert-primary mb-2">Informational alert</div>
@@ -217,6 +276,39 @@
                         <p class="text-muted small mb-0">Tambahkan <code>.table-striped</code> atau <code>.table-bordered</code> sesuai kebutuhan.</p>
                     </div>
                 </div>
+
+                {{-- Demonstration: Foreach & Nested Foreach --}}
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="h5 mb-3">Perulangan Foreach & Nested Foreach</h3>
+                        
+                        <h6>1. Foreach Users</h6>
+                        @if (isset($users))
+                            @foreach ($users as $user)
+                                <p class="mb-1">This is user {{ $user->id }}</p>
+                            @endforeach
+                        @else
+                            <p class="text-muted small">Variabel <code>$users</code> belum di-pass dari Controller.</p>
+                        @endif
+
+                        <hr>
+
+                        <h6>2. Nested Foreach</h6>
+                        @if (isset($users))
+                            @foreach ($users as $user)
+                                @if (isset($user->posts))
+                                    @foreach ($user->posts as $post)
+                                        @if ($loop->parent->first)
+                                            <p class="mb-1">This is the first iteration of the parent loop.</p>
+                                        @endif
+                                    @endforeach
+                                @endif
+                            @endforeach
+                        @else
+                            <p class="text-muted small">Variabel <code>$users</code> belum di-pass dari Controller.</p>
+                        @endif
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -224,7 +316,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; {{date('Y')}} My Laravel App. All Rights Reserved.</p>
+            <p>&copy; {{ date('Y') }} My Laravel App. All Rights Reserved.</p>
         </div>
     </footer>
 
