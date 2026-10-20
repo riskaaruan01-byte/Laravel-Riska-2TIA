@@ -29,13 +29,14 @@ class PelangganController extends Controller
      */
     public function store(Request $request)
     {
+        // Validasi sesuai aturan yang ditentukan
         $request->validate([
             'first_name' => 'required|string|max:255',
             'last_name'  => 'required|string|max:255',
-            'birthday'   => 'nullable|date',
-            'gender'     => 'nullable|string',
+            'birthday'   => 'required|date',
+            'gender'     => 'required|in:Male,Female',
             'email'      => 'required|email|unique:pelanggans,email',
-            'phone'      => 'nullable|string|max:20',
+            'phone'      => 'required|numeric',
         ]);
 
         Pelanggan::create($request->all());
@@ -66,13 +67,14 @@ class PelangganController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        // Validasi sesuai aturan yang ditentukan
         $request->validate([
             'first_name' => 'required|string|max:255',
             'last_name'  => 'required|string|max:255',
-            'birthday'   => 'nullable|date',
-            'gender'     => 'nullable|string',
+            'birthday'   => 'required|date',
+            'gender'     => 'required|in:Male,Female',
             'email'      => 'required|email|unique:pelanggans,email,' . $id . ',pelanggan_id',
-            'phone'      => 'nullable|string|max:20',
+            'phone'      => 'required|numeric',
         ]);
 
         $pelanggan = Pelanggan::findOrFail($id);
