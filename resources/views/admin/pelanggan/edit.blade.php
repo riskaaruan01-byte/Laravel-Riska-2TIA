@@ -2,22 +2,19 @@
 <html lang="id">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Volt Free Bootstrap 5 Dashboard - Edit Pelanggan</title>
+    <title>Volt Free Bootstrap 5 Dashboard Edit Pelanggan</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets-admin/img/favicon/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets-admin/img/favicon/favicon-32x32.png') }}">
-
-    <!-- Volt CSS -->
+    <!-- Volt css -->
     <link type="text/css" href="{{ asset('assets-admin/css/volt.css') }}" rel="stylesheet">
 </head>
 <body>
-
     <!-- Mobile Navbar -->
     <nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
         <a class="navbar-brand me-lg-5" href="{{ route('dashboard') }}">
-            <img class="navbar-brand-dark" src="{{ asset('assets-admin/img/brand/light.svg') }}" alt="Volt logo" />
+            <img class="navbar-brand-dark" src="{{ asset('assets-admin/img/brand/light.svg') }}" alt="Volt logo">
         </a>
         <div class="d-flex align-items-center">
             <button class="navbar-toggler d-lg-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu">
@@ -61,7 +58,6 @@
                     <li class="breadcrumb-item active" aria-current="page">Edit Pelanggan</li>
                 </ol>
             </nav>
-
             <div class="d-flex justify-content-between w-100 flex-wrap">
                 <div class="mb-3 mb-lg-0">
                     <h1 class="h4">Edit Pelanggan</h1>
@@ -78,11 +74,10 @@
             <div class="col-12 mb-4">
                 <div class="card border-0 shadow components-section">
                     <div class="card-body">
-                        <!-- Perhatikan Action dan Method -->
-                        <form action="{{ route('pelanggan.update', $pelanggan->id) }}" method="POST">
+                        <!-- Action mengarah ke route update dengan pelanggan_id -->
+                        <form action="{{ route('pelanggan.update', $pelanggan->pelanggan_id) }}" method="POST">
                             @csrf
                             @method('PUT')
-
                             <div class="row mb-4">
                                 <!-- Kolom 1 -->
                                 <div class="col-lg-4 col-sm-6">
@@ -90,7 +85,6 @@
                                         <label for="first_name" class="form-label">First name</label>
                                         <input type="text" id="first_name" name="first_name" class="form-control" value="{{ old('first_name', $pelanggan->first_name) }}" required>
                                     </div>
-
                                     <div class="mb-3">
                                         <label for="last_name" class="form-label">Last name</label>
                                         <input type="text" id="last_name" name="last_name" class="form-control" value="{{ old('last_name', $pelanggan->last_name) }}" required>
@@ -103,7 +97,6 @@
                                         <label for="birthday" class="form-label">Birthday</label>
                                         <input type="date" id="birthday" name="birthday" class="form-control" value="{{ old('birthday', $pelanggan->birthday) }}">
                                     </div>
-
                                     <div class="mb-3">
                                         <label for="gender" class="form-label">Gender</label>
                                         <select id="gender" name="gender" class="form-select">
@@ -121,7 +114,6 @@
                                         <label for="email" class="form-label">Email</label>
                                         <input type="email" id="email" name="email" class="form-control" value="{{ old('email', $pelanggan->email) }}" required>
                                     </div>
-
                                     <div class="mb-3">
                                         <label for="phone" class="form-label">Phone</label>
                                         <input type="text" id="phone" name="phone" class="form-control" value="{{ old('phone', $pelanggan->phone) }}">

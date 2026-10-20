@@ -85,46 +85,44 @@
             <div class="card-body">
                 <div class="table-responsive">
                     <table class="table table-centered table-nowrap mb-0 rounded">
-                        <thead class="thead-light">
-                            <tr>
-                                <th class="border-0 rounded-start">First Name</th>
-                                <th class="border-0">Last Name</th>
-                                <th class="border-0">Birthday</th>
-                                <th class="border-0">Gender</th>
-                                <th class="border-0">Email</th>
-                                <th class="border-0">Phone</th>
-                                <th class="border-0 rounded-end">Action</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @forelse ($dataPelanggan as $item)
-                                <tr>
-                                    <td>{{ $item->first_name }}</td>
-                                    <td>{{ $item->last_name }}</td>
-                                    <td>{{ $item->birthday }}</td>
-                                    <td>{{ $item->gender }}</td>
-                                    <td>{{ $item->email }}</td>
-                                    <td>{{ $item->phone }}</td>
-                                    <td>
-                                        <!-- Tombol Edit -->
-                                        <a href="{{ route('pelanggan.edit', $item->id) }}" class="btn btn-sm btn-primary me-1">
-                                            Edit
-                                        </a>
+                     <thead class="thead-light">
+    <tr>
+        <th class="border-0 rounded-start">First Name</th>
+        <th class="border-0">Last Name</th>
+        <th class="border-0">Birthday</th>
+        <th class="border-0">Gender</th>
+        <th class="border-0">Email</th>
+        <th class="border-0">Phone</th>
+        <th class="border-0 rounded-end">Action</th>
+    </tr>
+</thead>
+<tbody>
+    @forelse ($dataPelanggan as $item)
+        <tr>
+            <td>{{ $item->first_name }}</td>
+            <td>{{ $item->last_name }}</td>
+            <td>{{ $item->birthday }}</td>
+            <td>{{ $item->gender }}</td>
+            <td>{{ $item->email }}</td>
+            <td>{{ $item->phone }}</td>
+            <td>
+                <!-- Tombol Edit -->
+                <a href="{{ route('pelanggan.edit', $item->pelanggan_id) }}" class="btn btn-sm btn-info me-1">Edit</a>
 
-                                        <!-- Tombol Hapus -->
-                                        <form action="{{ route('pelanggan.destroy', $item->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
-                                        </form>
-                                    </td>
-                                </tr>
-                            @empty
-                                <tr>
-                                    <td colspan="7" class="text-center py-4">Belum ada data pelanggan.</td>
-                                </tr>
-                            @endforelse
-                        </tbody>
+                <!-- Tombol Hapus -->
+                <form action="{{ route('pelanggan.destroy', $item->pelanggan_id) }}" method="POST" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?')">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                </form>
+            </td>
+        </tr>
+    @empty
+        <tr>
+            <td colspan="7" class="text-center py-4">Belum ada data pelanggan.</td>
+        </tr>
+    @endforelse
+</tbody>
                     </table>
                 </div>
             </div>

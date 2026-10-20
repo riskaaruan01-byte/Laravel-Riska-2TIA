@@ -10,10 +10,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-route::get('/home',[HomeController::class,'index']);
-Route::post('question/store', [QuestionController::class, 'store'])
-		->name('question.store');
+Route::get('/home', [HomeController::class, 'index']);
+Route::post('question/store', [QuestionController::class, 'store'])->name('question.store');
 
-        Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-        
-        Route::resource('pelanggan', PelangganController::class);
+Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+// Route CRUD Pelanggan
+Route::resource('pelanggan', PelangganController::class);
