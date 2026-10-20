@@ -254,8 +254,48 @@
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+   <!-- ===== MODAL RESPONSE & SCRIPT UTUH ===== -->
+@if(session('thankyou'))
+<!-- 1. HTML Modal -->
+<div class="modal fade" id="thankYouModal" tabindex="-1" aria-labelledby="thankYouModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 shadow-lg" style="border-radius: 12px; background-color: #ffffff;">
+            <div class="modal-header border-0 pb-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body text-center px-4 pb-4 pt-0">
+                <h2 class="fw-bold mb-2" style="color: #3E97FF;">Terima Kasih, {{ session('thankyou.nama') }} 🎉</h2>
+                <p class="lead text-secondary mb-3">Pertanyaan Anda telah berhasil dikirim.</p>
 
-</html>
+                <blockquote class="text-start p-3 my-3 bg-light rounded" style="border-left: 5px solid #3E97FF; font-size: 1rem; color: #333;">
+                    <strong>Pertanyaan Anda:</strong><br>
+                    "{{ session('thankyou.pertanyaan') }}"
+                </blockquote>
+
+                <p class="text-muted small mt-3" style="font-style: italic;">
+                    Pertanyaan Anda akan segera kami tanggapi dan balas melalui email <strong style="color: #333;">{{ session('thankyou.email') }}</strong>.<br>
+                    Mohon cek kotak masuk atau folder spam Anda secara berkala.
+                </p>
+
+                <button type="button" class="btn btn-primary px-4 py-2 mt-3" data-bs-dismiss="modal" style="background-color: #3E97FF; border: none; border-radius: 6px;">
+                    Kembali ke Beranda
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 2. Bootstrap JS Bundle -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- 3. Auto Show Script -->
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var el = document.getElementById('thankYouModal');
+        if (el) {
+            var m = new bootstrap.Modal(el);
+            m.show();
+        }
+    });
+</script>
+@endif

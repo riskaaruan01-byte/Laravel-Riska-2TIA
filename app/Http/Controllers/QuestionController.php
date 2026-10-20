@@ -34,16 +34,22 @@ class QuestionController extends Controller
             'pertanyaan' => 'required',
         ]);
 
-        // Ambil data dari request
-        $nama       = $request->nama;
-        $email      = $request->email;
-        $pertanyaan = $request->pertanyaan;
+        // Ambil data yang sudah lolos validasi
+        $nama       = $validated['nama'];
+        $email      = $validated['email'];
+        $pertanyaan = $validated['pertanyaan'];
 
         // Buat format pesan flash
         $pesan = "Terimakasih <strong>{$nama}</strong>! Pertanyaan ini: <strong>{$pertanyaan}</strong> akan segera direspon melalui email <strong>{$email}</strong>";
 
-        // Redirect kembali ke halaman form dengan flash data 'info'
-        return redirect()->back()->with('info', $pesan);
+        // Redirect kembali ke halaman form dengan flash data 'info' dan 'thankyou'
+        return redirect()->back()
+            ->with('info', $pesan)
+            ->with('thankyou', [
+                'nama'       => $nama,
+                'email'      => $email,
+                'pertanyaan' => $pertanyaan,
+            ]);
     }
 
     /**
