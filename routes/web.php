@@ -6,6 +6,7 @@ use App\Http\Controllers\QuestionController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\BiodataController;
+use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -23,3 +24,4 @@ Route::get('/pelanggan/{id}/cv', [BiodataController::class, 'cv'])->name('pelang
 // Route CRUD Pelanggan & Biodata
 Route::resource('pelanggan', PelangganController::class);
 Route::resource('biodata', BiodataController::class);
+Route::resource('user', UserController::class);

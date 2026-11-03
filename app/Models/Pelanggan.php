@@ -10,15 +10,9 @@ class Pelanggan extends Model
     use HasFactory;
 
     protected $table = 'pelanggans';
+    
+    // Tambahkan baris ini jika primary key menggunakan pelanggan_id
     protected $primaryKey = 'pelanggan_id';
 
-    protected $fillable = [
-        'first_name',
-        'last_name',
-        'birthday',
-        'gender',
-        'email',
-        'phone',
-    ];
+    protected $guarded = [];
 }
-

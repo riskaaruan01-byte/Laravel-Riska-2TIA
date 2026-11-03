@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Pelanggan;
+use Illuminate\Http\Request;
 
 class PelangganController extends Controller
 {
@@ -12,8 +12,9 @@ class PelangganController extends Controller
      */
     public function index()
     {
-        $data['dataPelanggan'] = Pelanggan::all();
-        return view('admin.pelanggan.index', $data);
+        $dataPelanggan = Pelanggan::latest()->get();
+        // Diubah dari 'admin.pelanggan.index' menjadi 'pelanggan.index'
+        return view('pelanggan.index', compact('dataPelanggan'));
     }
 
     /**
@@ -21,7 +22,8 @@ class PelangganController extends Controller
      */
     public function create()
     {
-        return view('admin.pelanggan.create');
+        // Diubah dari 'admin.pelanggan.create' menjadi 'pelanggan.create'
+        return view('pelanggan.create');
     }
 
     /**
@@ -29,68 +31,59 @@ class PelangganController extends Controller
      */
     public function store(Request $request)
     {
-        // Validasi sesuai aturan yang ditentukan
         $request->validate([
             'first_name' => 'required|string|max:255',
             'last_name'  => 'required|string|max:255',
-            'birthday'   => 'required|date',
-            'gender'     => 'required|in:Male,Female',
             'email'      => 'required|email|unique:pelanggans,email',
-            'phone'      => 'required|numeric',
+            'birthday'   => 'nullable|date',
+            'gender'     => 'nullable|string',
+            'phone'      => 'nullable|string',
         ]);
 
         Pelanggan::create($request->all());
 
-        return redirect()->route('pelanggan.index')->with('success', 'Data pelanggan berhasil ditambahkan');
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        $pelanggan = Pelanggan::findOrFail($id);
-        return view('admin.pelanggan.show', compact('pelanggan'));
+        return redirect('/pelanggan')->with('success', 'Data pelanggan berhasil ditambahkan!');
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($id)
     {
         $pelanggan = Pelanggan::findOrFail($id);
-        return view('admin.pelanggan.edit', compact('pelanggan'));
+        // Diubah dari 'admin.pelanggan.edit' menjadi 'pelanggan.edit'
+        return view('pelanggan.edit', compact('pelanggan'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, $id)
     {
-        // Validasi sesuai aturan yang ditentukan
+        $pelanggan = Pelanggan::findOrFail($id);
+
         $request->validate([
             'first_name' => 'required|string|max:255',
             'last_name'  => 'required|string|max:255',
-            'birthday'   => 'required|date',
-            'gender'     => 'required|in:Male,Female',
-            'email'      => 'required|email|unique:pelanggans,email,' . $id . ',pelanggan_id',
-            'phone'      => 'required|numeric',
+            'email'      => 'required|email|unique:pelanggans,email,' . $id,
+            'birthday'   => 'nullable|date',
+            'gender'     => 'nullable|string',
+            'phone'      => 'nullable|string',
         ]);
 
-        $pelanggan = Pelanggan::findOrFail($id);
         $pelanggan->update($request->all());
 
-        return redirect()->route('pelanggan.index')->with('success', 'Data pelanggan berhasil diperbarui');
+        return redirect('/pelanggan')->with('success', 'Data pelanggan berhasil diperbarui!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy($id)
     {
         $pelanggan = Pelanggan::findOrFail($id);
         $pelanggan->delete();
 
-        return redirect()->route('pelanggan.index')->with('success', 'Data berhasil dihapus');
+        return redirect('/pelanggan')->with('success', 'Data pelanggan berhasil dihapus!');
     }
 }
