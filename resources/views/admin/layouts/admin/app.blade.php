@@ -1,31 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>@yield('title', 'Dashboard Admin')</title>
+
+    {{-- start css --}}
     @include('layouts.admin.css')
+    {{-- end css --}}
 </head>
-<body class="bg-light">
-    <div class="d-flex">
-        {{-- Sidebar --}}
-        @include('layouts.admin.sidebar')
+<body>
 
-        {{-- Main Content Container --}}
-        <div class="w-100 d-flex flex-column min-vh-100">
-            {{-- Header --}}
-            @include('layouts.admin.header')
+    {{-- start sidebar --}}
+    @include('layouts.admin.sidebar')
+    {{-- end sidebar --}}
 
-            {{-- Dynamic Page Content --}}
-            <main class="container-fluid p-4">
-                @yield('content')
-            </main>
+    <main class="content">
+        {{-- start header --}}
+        @include('layouts.admin.header')
+        {{-- end header --}}
 
-            {{-- Footer --}}
-            @include('layouts.admin.footer')
-        </div>
-    </div>
+        {{-- start main content --}}
+        @yield('content')
+        {{-- end main content --}}
 
+        {{-- start footer --}}
+        @include('layouts.admin.footer')
+        {{-- end footer --}}
+    </main>
+
+    {{-- start js --}}
     @include('layouts.admin.js')
+    {{-- end js --}}
+
 </body>
 </html>
