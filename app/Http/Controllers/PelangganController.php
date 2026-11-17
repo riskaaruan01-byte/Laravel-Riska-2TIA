@@ -7,28 +7,25 @@ use Illuminate\Http\Request;
 
 class PelangganController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
+    public function index(Request $request)
     {
-        $dataPelanggan = Pelanggan::latest()->get();
-        // Diubah dari 'admin.pelanggan.index' menjadi 'pelanggan.index'
+        $filterableColumns = ['gender'];
+        $searchableColumns = ['first_name', 'last_name', 'email'];
+
+        $dataPelanggan = Pelanggan::filter($request, $filterableColumns)
+            ->search($request, $searchableColumns)
+            ->latest()
+            ->paginate(10)
+            ->withQueryString();
+
         return view('pelanggan.index', compact('dataPelanggan'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
-        // Diubah dari 'admin.pelanggan.create' menjadi 'pelanggan.create'
         return view('pelanggan.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -45,19 +42,12 @@ class PelangganController extends Controller
         return redirect('/pelanggan')->with('success', 'Data pelanggan berhasil ditambahkan!');
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit($id)
     {
         $pelanggan = Pelanggan::findOrFail($id);
-        // Diubah dari 'admin.pelanggan.edit' menjadi 'pelanggan.edit'
         return view('pelanggan.edit', compact('pelanggan'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(Request $request, $id)
     {
         $pelanggan = Pelanggan::findOrFail($id);
@@ -65,7 +55,7 @@ class PelangganController extends Controller
         $request->validate([
             'first_name' => 'required|string|max:255',
             'last_name'  => 'required|string|max:255',
-            'email'      => 'required|email|unique:pelanggans,email,' . $id,
+            'email'      => 'required|email|unique:pelanggans,email,' . $id . ',pelanggan_id',
             'birthday'   => 'nullable|date',
             'gender'     => 'nullable|string',
             'phone'      => 'nullable|string',
@@ -76,9 +66,6 @@ class PelangganController extends Controller
         return redirect('/pelanggan')->with('success', 'Data pelanggan berhasil diperbarui!');
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy($id)
     {
         $pelanggan = Pelanggan::findOrFail($id);
