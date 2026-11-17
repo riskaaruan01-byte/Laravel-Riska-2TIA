@@ -16,7 +16,7 @@ class CreatePelangganDummy extends Seeder
     public function run(): void
     {
 
-    $faker = \Faker\Factory::create();
+    $faker = \Faker\Factory::create('id_ID');
 
     foreach (range(1, 100) as $index) {
         DB::table('pelanggan')->insert([
