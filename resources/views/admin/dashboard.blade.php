@@ -1,18 +1,18 @@
 <!--
 
 =========================================================
-* Volt Free - Bootstrap 5 Dashboard
+- Volt Free - Bootstrap 5 Dashboard
 =========================================================
 
-* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
-* Copyright 2021 Themesberg (https://www.themesberg.com)
-* License (https://themesberg.com/licensing)
+- Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
+- Copyright 2021 Themesberg (https://www.themesberg.com)
+- License (https://themesberg.com/licensing)
 
-* Designed and coded by https://themesberg.com
+- Designed and coded by https://themesberg.com
 
 =========================================================
 
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please contact us to request a removal.
+- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please contact us to request a removal.
 
 -->
 <!DOCTYPE html>
@@ -27,24 +27,23 @@
 	<meta name="author" content="Themesberg">
 
 	<!-- Favicon -->
-<link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets-admin/img/favicon/apple-touch-icon.png') }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets-admin/img/favicon/favicon-32x32.png') }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets-admin/img/favicon/favicon-16x16.png') }}">
-<link rel="manifest" href="{{ asset('assets-admin/img/favicon/site.webmanifest') }}">
-<link rel="mask-icon" href="{{ asset('assets-admin/img/favicon/safari-pinned-tab.svg') }}" color="#ffffff">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="theme-color" content="#ffffff">
+	<link rel="apple-touch-icon" sizes="120x120" href="{{ asset('assets-admin/img/favicon/apple-touch-icon.png') }}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets-admin/img/favicon/favicon-32x32.png') }}">
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets-admin/img/favicon/favicon-16x16.png') }}">
+	<link rel="manifest" href="{{ asset('assets-admin/img/favicon/site.webmanifest') }}">
+	<link rel="mask-icon" href="{{ asset('assets-admin/img/favicon/safari-pinned-tab.svg') }}" color="#ffffff">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="theme-color" content="#ffffff">
 
-<!-- Volt CSS -->
-<link type="text/css" href="{{ asset('assets-admin/css/volt.css') }}" rel="stylesheet">
-
+	<!-- Volt CSS -->
+	<link type="text/css" href="{{ asset('assets-admin/css/volt.css') }}" rel="stylesheet">
 </head>
 
 <body>
 	<nav class="navbar navbar-dark navbar-theme-primary px-4 col-12 d-lg-none">
 		<a class="navbar-brand me-lg-5" href="../../index.html">
 			<img class="navbar-brand-dark" src="{{ asset('assets-admin/img/brand/light.svg') }}" alt="Volt logo" />
-            <img class="navbar-brand-light" src="{{ asset('assets-admin/img/brand/dark.svg') }}" alt="Volt logo" />
+			<img class="navbar-brand-light" src="{{ asset('assets-admin/img/brand/dark.svg') }}" alt="Volt logo" />
 		</a>
 		<div class="d-flex align-items-center">
 			<button class="navbar-toggler d-lg-none collapsed" type="button" data-bs-toggle="collapse"
@@ -54,142 +53,145 @@
 			</button>
 		</div>
 	</nav>
-<nav id="sidebarMenu" class="sidebar d-lg-block bg-gray-800 text-white collapse" data-simplebar>
-    <div class="sidebar-inner px-4 pt-3">
-        <div class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
-            <div class="d-flex align-items-center">
-                <div class="avatar-lg me-4">
-                    <img src="{{ asset('assets-admin/img/team/profile-picture-3.jpg') }}"
-                        class="card-img-top rounded-circle border-white" alt="Bonnie Green">
-                </div>
-                <div class="d-block">
-                    <h2 class="h5 mb-3">Hi, Jane</h2>
-                    <a href="../../pages/examples/sign-in.html"
-                        class="btn btn-secondary btn-sm d-inline-flex align-items-center">
-                        <svg class="icon icon-xxs me-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
-                            </path>
-                        </svg>
-                        Sign Out
-                    </a>
-                </div>
-            </div>
-            <div class="collapse-close d-md-none">
-                <a href="#sidebarMenu" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
-                    aria-controls="sidebarMenu" aria-expanded="true" aria-label="Toggle navigation">
-                    <svg class="icon icon-xs" fill="currentColor" viewBox="0 0 20 20"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                            clip-rule="evenodd"></path>
-                    </svg>
-                </a>
-            </div>
-        </div>
 
-        <ul class="nav flex-column pt-3 pt-md-0">
-            {{-- Volt Overview --}}
-            <li class="nav-item">
-                <a href="#" class="nav-link d-flex align-items-center">
-                    <span class="sidebar-icon">
-                        <img src="{{ asset('assets-admin/img/brand/light.svg') }}" height="20" width="20"
-                            alt="Volt Logo">
-                    </span>
-                    <span class="mt-1 ms-1 sidebar-text">Volt Overview</span>
-                </a>
-            </li>
+	<nav id="sidebarMenu" class="sidebar d-lg-block bg-gray-800 text-white collapse" data-simplebar>
+		<div class="sidebar-inner px-4 pt-3">
+			<div class="user-card d-flex d-md-none align-items-center justify-content-between justify-content-md-center pb-4">
+				<div class="d-flex align-items-center">
+					<div class="avatar-lg me-4">
+						<img src="{{ asset('assets-admin/img/team/profile-picture-3.jpg') }}"
+							class="card-img-top rounded-circle border-white" alt="Bonnie Green">
+					</div>
+					<div class="d-block">
+						<h2 class="h5 mb-3">Hi, {{ Auth::user()->name }}</h2>
+						<form action="{{ route('auth.logout') }}" method="POST">
+							@csrf
+							<button type="submit" class="btn btn-secondary btn-sm d-inline-flex align-items-center">
+								<svg class="icon icon-xxs me-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+									xmlns="http://www.w3.org/2000/svg">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+										d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+									</path>
+								</svg>
+								Sign Out
+							</button>
+						</form>
+					</div>
+				</div>
+				<div class="collapse-close d-md-none">
+					<a href="#sidebarMenu" data-bs-toggle="collapse" data-bs-target="#sidebarMenu"
+						aria-controls="sidebarMenu" aria-expanded="true" aria-label="Toggle navigation">
+						<svg class="icon icon-xs" fill="currentColor" viewBox="0 0 20 20"
+							xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd"
+								d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+								clip-rule="evenodd"></path>
+						</svg>
+					</a>
+				</div>
+			</div>
 
-            {{-- Dashboard --}}
-            <li class="nav-item active">
-                <a href="#" class="nav-link">
-                    <span class="sidebar-icon">
-                        <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
-                            <path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
-                        </svg>
-                    </span>
-                    <span class="sidebar-text">Dashboard</span>
-                </a>
-            </li>
+			<ul class="nav flex-column pt-3 pt-md-0">
+				{{-- Volt Overview --}}
+				<li class="nav-item">
+					<a href="#" class="nav-link d-flex align-items-center">
+						<span class="sidebar-icon">
+							<img src="{{ asset('assets-admin/img/brand/light.svg') }}" height="20" width="20"
+								alt="Volt Logo">
+						</span>
+						<span class="mt-1 ms-1 sidebar-text">Volt Overview</span>
+					</a>
+				</li>
 
-            {{-- Tables --}}
-            <li class="nav-item">
-                <span class="nav-link collapsed d-flex justify-content-between align-items-center"
-                    data-bs-toggle="collapse" data-bs-target="#submenu-app">
-                    <span>
-                        <span class="sidebar-icon">
-                            <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path fill-rule="evenodd"
-                                    d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z"
-                                    clip-rule="evenodd"></path>
-                            </svg>
-                        </span>
-                        <span class="sidebar-text">Tables</span>
-                    </span>
-                    <span class="link-arrow">
-                        <svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </span>
-                </span>
-                <div class="multi-level collapse" role="list" id="submenu-app" aria-expanded="false">
-                    <ul class="flex-column nav">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">
-                                <span class="sidebar-text">Bootstrap Tables</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </li>
+				{{-- Dashboard --}}
+				<li class="nav-item active">
+					<a href="{{ route('dashboard') }}" class="nav-link">
+						<span class="sidebar-icon">
+							<svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
+								xmlns="http://www.w3.org/2000/svg">
+								<path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+								<path d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"></path>
+							</svg>
+						</span>
+						<span class="sidebar-text">Dashboard</span>
+					</a>
+				</li>
 
-            <li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
+				{{-- Tables --}}
+				<li class="nav-item">
+					<span class="nav-link collapsed d-flex justify-content-between align-items-center"
+						data-bs-toggle="collapse" data-bs-target="#submenu-app">
+						<span>
+							<span class="sidebar-icon">
+								<svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
+									xmlns="http://www.w3.org/2000/svg">
+									<path fill-rule="evenodd"
+										d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z"
+										clip-rule="evenodd"></path>
+								</svg>
+							</span>
+							<span class="sidebar-text">Tables</span>
+						</span>
+						<span class="link-arrow">
+							<svg class="icon icon-sm" fill="currentColor" viewBox="0 0 20 20"
+								xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd"
+									d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+									clip-rule="evenodd"></path>
+							</svg>
+						</span>
+					</span>
+					<div class="multi-level collapse" role="list" id="submenu-app" aria-expanded="false">
+						<ul class="flex-column nav">
+							<li class="nav-item">
+								<a class="nav-link" href="#">
+									<span class="sidebar-text">Bootstrap Tables</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>
 
-            {{-- Documentation --}}
-            <li class="nav-item">
-                <a href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/getting-started/quick-start/"
-                    target="_blank" class="nav-link d-flex align-items-center">
-                    <span class="sidebar-icon">
-                        <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </span>
-                    <span class="sidebar-text">Documentation
-                        <span class="badge badge-sm bg-secondary ms-1 text-gray-800">v1.4</span>
-                    </span>
-                </a>
-            </li>
+				<li role="separator" class="dropdown-divider mt-4 mb-3 border-gray-700"></li>
 
-            {{-- Upgrade to Pro --}}
-            <li class="nav-item">
-                <a href="#"
-                    class="btn btn-secondary d-flex align-items-center justify-content-center btn-upgrade-pro">
-                    <span class="sidebar-icon d-inline-flex align-items-center justify-content-center">
-                        <svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd"
-                                d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
-                                clip-rule="evenodd"></path>
-                        </svg>
-                    </span>
-                    <span>Upgrade to Pro</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</nav>
+				{{-- Documentation --}}
+				<li class="nav-item">
+					<a href="https://themesberg.com/docs/volt-bootstrap-5-dashboard/getting-started/quick-start/"
+						target="_blank" class="nav-link d-flex align-items-center">
+						<span class="sidebar-icon">
+							<svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
+								xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd"
+									d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-8-3a1 1 0 00-.867.5 1 1 0 11-1.731-1A3 3 0 0113 8a3.001 3.001 0 01-2 2.83V11a1 1 0 11-2 0v-1a1 1 0 011-1 1 1 0 100-2zm0 8a1 1 0 100-2 1 1 0 000 2z"
+									clip-rule="evenodd"></path>
+							</svg>
+						</span>
+						<span class="sidebar-text">Documentation
+							<span class="badge badge-sm bg-secondary ms-1 text-gray-800">v1.4</span>
+						</span>
+					</a>
+				</li>
+
+				{{-- Upgrade to Pro --}}
+				<li class="nav-item">
+					<a href="#"
+						class="btn btn-secondary d-flex align-items-center justify-content-center btn-upgrade-pro">
+						<span class="sidebar-icon d-inline-flex align-items-center justify-content-center">
+							<svg class="icon icon-xs me-2" fill="currentColor" viewBox="0 0 20 20"
+								xmlns="http://www.w3.org/2000/svg">
+								<path fill-rule="evenodd"
+									d="M12.395 2.553a1 1 0 00-1.45-.385c-.345.23-.614.558-.822.88-.214.33-.403.713-.57 1.116-.334.804-.614 1.768-.84 2.734a31.365 31.365 0 00-.613 3.58 2.64 2.64 0 01-.945-1.067c-.328-.68-.398-1.534-.398-2.654A1 1 0 005.05 6.05 6.981 6.981 0 003 11a7 7 0 1011.95-4.95c-.592-.591-.98-.985-1.348-1.467-.363-.476-.724-1.063-1.207-2.03zM12.12 15.12A3 3 0 017 13s.879.5 2.5.5c0-1 .5-4 1.25-4.5.5 1 .786 1.293 1.371 1.879A2.99 2.99 0 0113 13a2.99 2.99 0 01-.879 2.121z"
+									clip-rule="evenodd"></path>
+							</svg>
+						</span>
+						<span>Upgrade to Pro</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
 	<main class="content">
-
 		<nav class="navbar navbar-top navbar-expand navbar-dashboard navbar-dark ps-0 pe-2 pb-0">
 			<div class="container-fluid px-0">
 				<div class="d-flex justify-content-between w-100" id="navbarSupportedContent">
@@ -212,6 +214,7 @@
 						</form>
 						<!-- / Search form -->
 					</div>
+
 					<!-- Navbar links -->
 					<ul class="navbar-nav align-items-center">
 						<li class="nav-item dropdown">
@@ -232,9 +235,8 @@
 									<a href="#" class="list-group-item list-group-item-action border-bottom">
 										<div class="row align-items-center">
 											<div class="col-auto">
-												<!-- Avatar -->
 												<img alt="Image placeholder"
-													src="../../assets/img/team/profile-picture-1.jpg"
+													src="{{ asset('assets-admin/img/team/profile-picture-1.jpg') }}"
 													class="avatar-md rounded">
 											</div>
 											<div class="col ps-0 ms-2">
@@ -255,9 +257,8 @@
 									<a href="#" class="list-group-item list-group-item-action border-bottom">
 										<div class="row align-items-center">
 											<div class="col-auto">
-												<!-- Avatar -->
 												<img alt="Image placeholder"
-													src="../../assets/img/team/profile-picture-2.jpg"
+													src="{{ asset('assets-admin/img/team/profile-picture-2.jpg') }}"
 													class="avatar-md rounded">
 											</div>
 											<div class="col ps-0 ms-2">
@@ -287,14 +288,15 @@
 								</div>
 							</div>
 						</li>
+
 						<li class="nav-item dropdown ms-lg-3">
 							<a class="nav-link dropdown-toggle pt-1 px-0" href="#" role="button"
 								data-bs-toggle="dropdown" aria-expanded="false">
 								<div class="media d-flex align-items-center">
 									<img class="avatar rounded-circle" alt="Image placeholder"
-										src="../../assets/img/team/profile-picture-3.jpg">
+										src="{{ asset('assets-admin/img/team/profile-picture-3.jpg') }}">
 									<div class="media-body ms-2 text-dark align-items-center d-none d-lg-block">
-										<span class="mb-0 font-small fw-bold text-gray-900">Bonnie Green</span>
+										<span class="mb-0 font-small fw-bold text-gray-900">{{ Auth::user()->name }}</span>
 									</div>
 								</div>
 							</a>
@@ -333,18 +335,21 @@
 											d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-2 0c0 .993-.241 1.929-.668 2.754l-1.524-1.525a3.997 3.997 0 00.078-2.183l1.562-1.562C15.802 8.249 16 9.1 16 10zm-5.165 3.913l1.58 1.58A5.98 5.98 0 0110 16a5.976 5.976 0 01-2.516-.552l1.562-1.562a4.006 4.006 0 001.789.027zm-4.677-2.796a4.002 4.002 0 01-.041-2.08l-.08.08-1.53-1.533A5.98 5.98 0 004 10c0 .954.223 1.856.619 2.657l1.54-1.54zm1.088-6.45A5.974 5.974 0 0110 4c.954 0 1.856.223 2.657.619l-1.54 1.54a4.002 4.002 0 00-2.346.033L7.246 4.668zM12 10a2 2 0 11-4 0 2 2 0 014 0z"
 											clip-rule="evenodd"></path>
 									</svg>
-									Support
+									{{ session('last_login') }}
 								</a>
 								<div role="separator" class="dropdown-divider my-1"></div>
-								<a class="dropdown-item d-flex align-items-center" href="#">
-									<svg class="dropdown-icon text-danger me-2" fill="none" stroke="currentColor"
-										viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-											d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
-										</path>
-									</svg>
-									Logout
-								</a>
+								<form action="{{ route('auth.logout') }}" method="POST">
+									@csrf
+									<button type="submit" class="dropdown-item d-flex align-items-center">
+										<svg class="dropdown-icon text-danger me-2" fill="none" stroke="currentColor"
+											viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+												d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1">
+											</path>
+										</svg>
+										Logout
+									</button>
+								</form>
 							</div>
 						</li>
 					</ul>
@@ -442,15 +447,9 @@
 									</thead>
 									<tbody>
 										<tr>
-											<th class="text-gray-900" scope="row">
-												/demo/admin/index.html
-											</th>
-											<td class="fw-bolder text-gray-500">
-												3,225
-											</td>
-											<td class="fw-bolder text-gray-500">
-												$20
-											</td>
+											<th class="text-gray-900" scope="row">/demo/admin/index.html</th>
+											<td class="fw-bolder text-gray-500">3,225</td>
+											<td class="fw-bolder text-gray-500">$20</td>
 											<td class="fw-bolder text-gray-500">
 												<div class="d-flex">
 													<svg class="icon icon-xs text-danger me-2" fill="currentColor"
@@ -464,15 +463,9 @@
 											</td>
 										</tr>
 										<tr>
-											<th class="text-gray-900" scope="row">
-												/demo/admin/forms.html
-											</th>
-											<td class="fw-bolder text-gray-500">
-												2,987
-											</td>
-											<td class="fw-bolder text-gray-500">
-												0
-											</td>
+											<th class="text-gray-900" scope="row">/demo/admin/forms.html</th>
+											<td class="fw-bolder text-gray-500">2,987</td>
+											<td class="fw-bolder text-gray-500">0</td>
 											<td class="fw-bolder text-gray-500">
 												<div class="d-flex">
 													<svg class="icon icon-xs text-success me-2" fill="currentColor"
@@ -486,15 +479,9 @@
 											</td>
 										</tr>
 										<tr>
-											<th class="text-gray-900" scope="row">
-												/demo/admin/util.html
-											</th>
-											<td class="fw-bolder text-gray-500">
-												2,844
-											</td>
-											<td class="fw-bolder text-gray-500">
-												294
-											</td>
+											<th class="text-gray-900" scope="row">/demo/admin/util.html</th>
+											<td class="fw-bolder text-gray-500">2,844</td>
+											<td class="fw-bolder text-gray-500">294</td>
 											<td class="fw-bolder text-gray-500">
 												<div class="d-flex">
 													<svg class="icon icon-xs text-success me-2" fill="currentColor"
@@ -508,15 +495,9 @@
 											</td>
 										</tr>
 										<tr>
-											<th class="text-gray-900" scope="row">
-												/demo/admin/validation.html
-											</th>
-											<td class="fw-bolder text-gray-500">
-												2,050
-											</td>
-											<td class="fw-bolder text-gray-500">
-												$147
-											</td>
+											<th class="text-gray-900" scope="row">/demo/admin/validation.html</th>
+											<td class="fw-bolder text-gray-500">2,050</td>
+											<td class="fw-bolder text-gray-500">$147</td>
 											<td class="fw-bolder text-gray-500">
 												<div class="d-flex">
 													<svg class="icon icon-xs text-danger me-2" fill="currentColor"
@@ -530,15 +511,9 @@
 											</td>
 										</tr>
 										<tr>
-											<th class="text-gray-900" scope="row">
-												/demo/admin/modals.html
-											</th>
-											<td class="fw-bolder text-gray-500">
-												1,483
-											</td>
-											<td class="fw-bolder text-gray-500">
-												$19
-											</td>
+											<th class="text-gray-900" scope="row">/demo/admin/modals.html</th>
+											<td class="fw-bolder text-gray-500">1,483</td>
+											<td class="fw-bolder text-gray-500">$19</td>
 											<td class="fw-bolder text-gray-500">
 												<div class="d-flex">
 													<svg class="icon icon-xs text-success me-2" fill="currentColor"
@@ -556,6 +531,7 @@
 							</div>
 						</div>
 					</div>
+
 					<div class="col-12 col-xxl-6 mb-4">
 						<div class="card border-0 shadow">
 							<div class="card-header border-bottom d-flex align-items-center justify-content-between">
@@ -567,10 +543,9 @@
 									<li class="list-group-item px-0">
 										<div class="row align-items-center">
 											<div class="col-auto">
-												<!-- Avatar -->
 												<a href="#" class="avatar">
 													<img class="rounded" alt="Image placeholder"
-														src="../../assets/img/team/profile-picture-1.jpg">
+														src="{{ asset('assets-admin/img/team/profile-picture-1.jpg') }}">
 												</a>
 											</div>
 											<div class="col-auto ms--2">
@@ -599,10 +574,9 @@
 									<li class="list-group-item px-0">
 										<div class="row align-items-center">
 											<div class="col-auto">
-												<!-- Avatar -->
 												<a href="#" class="avatar">
 													<img class="rounded" alt="Image placeholder"
-														src="../../assets/img/team/profile-picture-2.jpg">
+														src="{{ asset('assets-admin/img/team/profile-picture-2.jpg') }}">
 												</a>
 											</div>
 											<div class="col-auto ms--2">
@@ -631,10 +605,9 @@
 									<li class="list-group-item px-0">
 										<div class="row align-items-center">
 											<div class="col-auto">
-												<!-- Avatar -->
 												<a href="#" class="avatar">
 													<img class="rounded" alt="Image placeholder"
-														src="../../assets/img/team/profile-picture-3.jpg">
+														src="{{ asset('assets-admin/img/team/profile-picture-3.jpg') }}">
 												</a>
 											</div>
 											<div class="col-auto ms--2">
@@ -663,10 +636,9 @@
 									<li class="list-group-item px-0">
 										<div class="row align-items-center">
 											<div class="col-auto">
-												<!-- Avatar -->
 												<a href="#" class="avatar">
 													<img class="rounded" alt="Image placeholder"
-														src="../../assets/img/team/profile-picture-4.jpg">
+														src="{{ asset('assets-admin/img/team/profile-picture-4.jpg') }}">
 												</a>
 											</div>
 											<div class="col-auto ms--2">
@@ -696,6 +668,7 @@
 							</div>
 						</div>
 					</div>
+
 					<div class="col-12 col-xxl-6 mb-4">
 						<div class="card border-0 shadow">
 							<div class="card-header border-bottom d-flex align-items-center justify-content-between">
@@ -717,7 +690,7 @@
 									<div class="col">
 										<div class="progress-wrapper">
 											<div class="progress-info">
-												<div class="h6 mb-0">Rocket - SaaS Template</div>
+												<div class="h6 mb-0">Rocket Saas Template</div>
 												<div class="small fw-bold text-gray-500"><span>75 %</span></div>
 											</div>
 											<div class="progress mb-0">
@@ -728,6 +701,7 @@
 										</div>
 									</div>
 								</div>
+
 								<!-- Project 2 -->
 								<div class="row align-items-center mb-4">
 									<div class="col-auto">
@@ -742,7 +716,7 @@
 									<div class="col">
 										<div class="progress-wrapper">
 											<div class="progress-info">
-												<div class="h6 mb-0">Themesberg - Design System</div>
+												<div class="h6 mb-0">Themesberg Design System</div>
 												<div class="small fw-bold text-gray-500"><span>60 %</span></div>
 											</div>
 											<div class="progress mb-0">
@@ -753,6 +727,7 @@
 										</div>
 									</div>
 								</div>
+
 								<!-- Project 3 -->
 								<div class="row align-items-center mb-4">
 									<div class="col-auto">
@@ -778,6 +753,7 @@
 										</div>
 									</div>
 								</div>
+
 								<!-- Project 4 -->
 								<div class="row align-items-center mb-3">
 									<div class="col-auto">
@@ -808,23 +784,33 @@
 					</div>
 				</div>
 			</div>
+
 			<div class="col-12 col-xl-4">
 				<div class="col-12 px-0 mb-4">
 					<div class="card shadow border-0 text-center p-0">
-						<div class="profile-cover rounded-top" data-background="../../assets/img/profile-cover.jpg" style="background: url(&quot;../../assets/img/profile-cover.jpg&quot;);"></div>
+						<div class="profile-cover rounded-top"
+							data-background="{{ asset('assets-admin/img/profile-cover.jpg') }}"
+							style="background: url('{{ asset('assets-admin/img/profile-cover.jpg') }}');"></div>
 						<div class="card-body pb-5">
-							<img src="../../assets/img/team/profile-picture-1.jpg" class="avatar-xl rounded-circle mx-auto mt-n7 mb-4" alt="Neil Portrait">
+							<img src="{{ asset('assets-admin/img/team/profile-picture-1.jpg') }}"
+								class="avatar-xl rounded-circle mx-auto mt-n7 mb-4" alt="Neil Portrait">
 							<h4 class="h3">Neil Sims</h4>
 							<h5 class="fw-normal">Senior Software Engineer</h5>
 							<p class="text-gray mb-4">New York, USA</p>
 							<a class="btn btn-sm btn-gray-800 d-inline-flex align-items-center me-2" href="#">
-								<svg class="icon icon-xs me-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z"></path></svg>
+								<svg class="icon icon-xs me-1" fill="currentColor" viewBox="0 0 20 20"
+									xmlns="http://www.w3.org/2000/svg">
+									<path
+										d="M8 9a3 3 0 100-6 3 3 0 000 6zM8 11a6 6 0 016 6H2a6 6 0 016-6zM16 7a1 1 0 10-2 0v1h-1a1 1 0 100 2h1v1a1 1 0 102 0v-1h1a1 1 0 100-2h-1V7z">
+									</path>
+								</svg>
 								Connect
 							</a>
 							<a class="btn btn-sm btn-secondary" href="#">Send Message</a>
 						</div>
-					 </div>
+					</div>
 				</div>
+
 				<div class="col-12 px-0 mb-4">
 					<div class="card border-0 shadow">
 						<div class="card-body">
@@ -852,6 +838,7 @@
 									</a>
 								</div>
 							</div>
+
 							<div class="d-flex align-items-center justify-content-between border-bottom py-3">
 								<div>
 									<div class="h6 mb-0 d-flex align-items-center">
@@ -885,6 +872,7 @@
 									</a>
 								</div>
 							</div>
+
 							<div class="d-flex align-items-center justify-content-between pt-3">
 								<div>
 									<div class="h6 mb-0 d-flex align-items-center">
@@ -924,13 +912,13 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="col-12 px-0">
 					<div class="card border-0 shadow">
 						<div class="card-body">
 							<h2 class="fs-5 fw-bold mb-1">Acquisition</h2>
 							<p>Tells you where your visitors originated from, such as search engines, social networks or
-								website
-								referrals.</p>
+								website referrals.</p>
 							<div class="d-block">
 								<div class="d-flex align-items-center me-5">
 									<div class="icon-shape icon-sm icon-shape-danger rounded me-3">
@@ -969,7 +957,7 @@
 			<div class="row">
 				<div class="col-12 col-md-4 col-xl-6 mb-4 mb-md-0">
 					<p class="mb-0 text-center text-lg-start">© 2019-<span class="current-year"></span> <a
-							class="text-primary fw-normal" href="https://themesberg.com" target="_blank">Themesberg</a>
+							class="text-primary fw-normal" href="https://themesberg.com" target="blank">Themesberg</a>
 					</p>
 				</div>
 				<div class="col-12 col-md-8 col-xl-6 text-center text-lg-start">
@@ -994,10 +982,9 @@
 	</main>
 
 	<!-- Core -->
-{{-- After --}}
-<script src="{{asset('assets-admin/vendor/@popperjs/core/dist/umd/popper.min.js')}}"></script>
-<script src="{{asset('assets-admin/vendor/bootstrap/dist/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('assets-admin/vendor/onscreen/dist/on-screen.umd.min.js')}}"></script>
+	<script src="{{ asset('assets-admin/vendor/@popperjs/core/dist/umd/popper.min.js') }}"></script>
+	<script src="{{ asset('assets-admin/vendor/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+	<script src="{{ asset('assets-admin/vendor/onscreen/dist/on-screen.umd.min.js') }}"></script>
 </body>
 
 </html>
